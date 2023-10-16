@@ -7,11 +7,10 @@ public class Canon : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform spawnPoint;
     
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
+       
             Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation, null);
-        }
+        
     }
 }
