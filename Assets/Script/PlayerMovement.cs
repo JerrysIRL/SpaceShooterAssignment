@@ -19,10 +19,11 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        horizontal = vertical > -0.99 ? -horizontal : horizontal;
-        _transform.Translate(new Vector3(0, vertical * movementSpeed * Time.deltaTime, 0));
         
-       _transform.Rotate(0,0, horizontal * rotationSpeed * Time.deltaTime);
+        horizontal = vertical > -0.99 ? -horizontal : horizontal;
+        
+        _transform.Translate(new Vector3(0, vertical * movementSpeed * Time.deltaTime, 0));
+       _transform.Rotate(Vector3.forward * (horizontal * rotationSpeed * Time.deltaTime));
 
     }
 }
