@@ -6,11 +6,9 @@ public class Canon : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform spawnPoint;
-    
+
     void FixedUpdate()
     {
-       
-            Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation, null);
-        
+        Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation, null);
     }
 }

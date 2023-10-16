@@ -14,9 +14,10 @@ public class Projectile : MonoBehaviour
         _rigidbody.AddForce(transform.up * (projectileSpeed * Time.fixedDeltaTime));
     }
 
-    // private void Update()
-    // {
-    //     
-    //     transform.position += transform.up * (projectileSpeed * Time.fixedDeltaTime);
-    // }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
+    
