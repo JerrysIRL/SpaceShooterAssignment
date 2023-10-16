@@ -5,15 +5,13 @@ using UnityEngine;
 public class Canon : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
-    
-    void Start()
-    {
-        
-    }
-
+    [SerializeField] private Transform spawnPoint;
     
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation, null);
+        }
     }
 }
