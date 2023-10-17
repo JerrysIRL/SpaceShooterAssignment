@@ -11,10 +11,9 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _rigidbody.AddForce(transform.up * (projectileSpeed * Time.fixedDeltaTime));
+        _rigidbody.AddForce(transform.up * projectileSpeed);
     }
-
-
+    
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
