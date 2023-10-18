@@ -15,8 +15,6 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, _player.position, moveSpeed * Time.deltaTime);
-         // Vector3 direction = (_player.position - transform.position).normalized;
-         // transform.Translate(direction * (moveSpeed * Time.deltaTime));
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -29,8 +27,8 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            EnemySpawner.Instance.ReturnToPool(gameObject);
             DataHolder.Instance.enemieCounter--;
+            EnemySpawner.Instance.ReturnToPool(gameObject);
         }
     }
 }

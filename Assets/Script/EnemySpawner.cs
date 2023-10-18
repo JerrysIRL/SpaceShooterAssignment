@@ -36,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         _dataHolder = DataHolder.Instance;
+        SpawnEnemyWave();
     }
 
     private void Update()
@@ -54,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (inactiveEnemies.Count == 0)
         {
-            ExpandPool(10); // Expand the pool if there are no inactive objects.
+            ExpandPool(1000); // Expand the pool if there are no inactive objects.
         }
 
         GameObject enemy = inactiveEnemies.Dequeue();
