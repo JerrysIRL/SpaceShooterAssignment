@@ -9,6 +9,9 @@ public class Canon : MonoBehaviour
 
     void FixedUpdate()
     {
-        Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation, null);
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation, null);
+        }
     }
 }
