@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            DataHolder.Instance.enemieCounter--;
+            DataHolder.Instance.enemyCounter--;
             EnemySpawner.Instance.ReturnToPool(gameObject);
         }
     }

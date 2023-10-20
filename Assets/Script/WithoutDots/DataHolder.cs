@@ -1,6 +1,7 @@
 
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 public class DataHolder : MonoBehaviour
@@ -11,7 +12,7 @@ public class DataHolder : MonoBehaviour
     [SerializeField] private TMP_Text fpsCounterText;
    
     private Transform _playerTransform;
-    public int enemieCounter;
+    public int enemyCounter;
     
     public float updateInterval = 1.0f;
     private float _timeSinceLastUpdate = 0f;
@@ -36,10 +37,9 @@ public class DataHolder : MonoBehaviour
 
         if (_timeSinceLastUpdate >= updateInterval)
         {
-            float fps = 1.0f / Time.deltaTime;
-            
-            enemieAmountText.text = $"Enemies Alive: {enemieCounter}";
-            fpsCounterText.text = $"FPS: {Mathf.Round(fps)}";
+            string fps = (1.0f / Time.deltaTime).ToString();
+            enemieAmountText.text = $"Enemies Alive: {enemyCounter}";
+            fpsCounterText.text = $"FPS: {fps}";
             
             _timeSinceLastUpdate = 0f;
         }

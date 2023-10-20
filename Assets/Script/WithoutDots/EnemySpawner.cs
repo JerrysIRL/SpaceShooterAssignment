@@ -79,7 +79,7 @@ public class EnemySpawner : MonoBehaviour
             GetPooledEnemy().transform.position = spawnPosition;
         }
 
-        _dataHolder.enemieCounter += enemieNumber;
+        _dataHolder.enemyCounter += enemieNumber;
     }
 
     private void ExpandPool(int size)
