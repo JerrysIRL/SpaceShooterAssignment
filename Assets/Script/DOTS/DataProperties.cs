@@ -11,5 +11,14 @@ namespace Script.DOTS
         public int EnemyDamage;
 
         public float BulletSpeed;
+
+        public float SpawnTimer;
+        public int NumberToSpawn;
+        public float SpawnRadius;
+    }
+
+    public struct EnemySpawnTimer : IComponentData
+    {
+        public float Value;
     }
 }

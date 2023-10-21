@@ -1,7 +1,10 @@
 ﻿using Unity.Entities;
 using Unity.Mathematics;
 
-public struct DataRandom : IComponentData
+namespace Script.DOTS
 {
-    public Random Value;
+    public struct DataRandom : IComponentData
+    {
+        public Random Value;
+    }
 }
