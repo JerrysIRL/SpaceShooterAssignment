@@ -15,13 +15,15 @@ namespace Script.DOTS
         public Entity EnemyPrefab => _dataProperties.ValueRO.EnemyPrefab;
         public int EnemyDamage => _dataProperties.ValueRO.EnemyDamage;
         public int NumberToSpawn => _dataProperties.ValueRO.NumberToSpawn;
-        public float TimeBetweenSpawns => _dataProperties.ValueRO.SpawnTimer;
+        public float TimeBetweenSpawns => _dataProperties.ValueRO.SpawnRate;
 
-        public float ZombieSpawnTimer
+        public float EnemySpawnTimer
         {
             get => _spawnTimer.ValueRO.Value;
             set => _spawnTimer.ValueRW.Value = value;
         }
+
+        public bool TimeToSpawnWave => EnemySpawnTimer <= 0f;
         public LocalTransform GetRandomEnemyTransform()
         {
             return new LocalTransform()

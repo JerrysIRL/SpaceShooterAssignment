@@ -41,7 +41,7 @@ namespace Script.DOTS
                     EnemySpeed = authoring.enemySpeed,
                     EnemyDamage = authoring.enemyDamage,
                     BulletSpeed = authoring.bulletSpeed,
-                    SpawnTimer = authoring.enemySpawnRate,
+                    SpawnRate = authoring.enemySpawnRate,
                     NumberToSpawn = authoring.numberToSpawn,
                     SpawnRadius = authoring.spawnRadius
                 });
@@ -50,8 +50,6 @@ namespace Script.DOTS
                 Value = Random.CreateFromIndex(authoring.randomSeed)
             });
             AddComponent(dataEntity, new EnemySpawnTimer());
-            
         }
-    
     }
 }

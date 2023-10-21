@@ -12,7 +12,7 @@ namespace Script.DOTS
 
         public float BulletSpeed;
 
-        public float SpawnTimer;
+        public float SpawnRate;
         public int NumberToSpawn;
         public float SpawnRadius;
     }
