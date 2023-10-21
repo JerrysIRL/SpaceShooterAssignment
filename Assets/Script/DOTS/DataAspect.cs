@@ -15,7 +15,7 @@ namespace Script.DOTS
         public Entity EnemyPrefab => _dataProperties.ValueRO.EnemyPrefab;
         public int EnemyDamage => _dataProperties.ValueRO.EnemyDamage;
         public int NumberToSpawn => _dataProperties.ValueRO.NumberToSpawn;
-        public float TimeBetweenSpawns => _dataProperties.ValueRO.SpawnRate;
+        public float SpawnRate => _dataProperties.ValueRO.SpawnRate;
 
         public float EnemySpawnTimer
         {

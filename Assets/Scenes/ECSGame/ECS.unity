@@ -135,6 +135,14 @@ PrefabInstance:
       propertyPath: spawnRadius
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
+      propertyPath: numberToSpawn
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
+      propertyPath: enemySpawnRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2562232586105865346, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: m_Name
       value: DataHolder
