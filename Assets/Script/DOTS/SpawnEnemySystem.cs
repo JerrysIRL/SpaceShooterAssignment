@@ -1,9 +1,5 @@
 ﻿using Unity.Burst;
-using Unity.Collections;
 using Unity.Entities;
-using Unity.Mathematics;
-using Unity.Transforms;
-using UnityEngine;
 
 namespace Script.DOTS
 {
@@ -27,9 +23,7 @@ namespace Script.DOTS
         public void OnUpdate(ref SystemState state)
         {
             var deltaTime = SystemAPI.Time.DeltaTime;
-            var dataEntity = SystemAPI.GetSingletonEntity<DataProperties>();
-            var dataAspect = SystemAPI.GetAspect<DataAspect>(dataEntity);
-
+            
             var ecbSingleton = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>();
 
             new SpawnEnemyJob()
