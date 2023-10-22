@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = vertical > -0.99 ? -horizontal : horizontal;
         
         _transform.Translate(new Vector3(0, vertical * movementSpeed * Time.deltaTime, 0));
+        
        _transform.Rotate(Vector3.forward * (horizontal * rotationSpeed * Time.deltaTime));
 
     }
