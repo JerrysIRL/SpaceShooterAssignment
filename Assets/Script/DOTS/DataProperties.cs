@@ -1,4 +1,5 @@
 using Unity.Entities;
+using Unity.Transforms;
 
 namespace Script.DOTS
 {
@@ -15,6 +16,7 @@ namespace Script.DOTS
         public float SpawnRate;
         public int NumberToSpawn;
         public float SpawnRadius;
+        public LocalTransform PlayerTransform;
     }
 
     public struct EnemySpawnTimer : IComponentData

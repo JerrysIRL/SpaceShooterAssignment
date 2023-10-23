@@ -173,7 +173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5768578129291411588, guid: bb98160f8d6ec334a9959f2982c4031f, type: 3}
       propertyPath: movementSpeed
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768578129291411588, guid: bb98160f8d6ec334a9959f2982c4031f, type: 3}
+      propertyPath: rotationSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9201512328191964854, guid: bb98160f8d6ec334a9959f2982c4031f, type: 3}
       propertyPath: m_Name
@@ -194,15 +198,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: spawnRadius
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: numberToSpawn
-      value: 5
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: enemySpawnRate
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2562232586105865346, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: m_Name

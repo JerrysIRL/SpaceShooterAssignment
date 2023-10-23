@@ -1,4 +1,5 @@
 ﻿using Unity.Burst;
+using Unity.Collections;
 using Unity.Entities;
 
 namespace Script.DOTS
@@ -15,11 +16,6 @@ namespace Script.DOTS
         }
 
         [BurstCompile]
-        public void OnDestroy(ref SystemState state)
-        {
-        }
-
-        [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
             var deltaTime = SystemAPI.Time.DeltaTime;
@@ -29,8 +25,10 @@ namespace Script.DOTS
             new SpawnEnemyJob()
             {
                 DeltaTime = deltaTime,
-                ECB = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged)
-            }.Run();
+                ECB = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged).AsParallelWriter()
+            }.ScheduleParallel();
+            
+            
         }
     }
 
@@ -38,10 +36,10 @@ namespace Script.DOTS
     public partial struct SpawnEnemyJob : IJobEntity
     {
         public float DeltaTime;
-        public EntityCommandBuffer ECB;
+        public EntityCommandBuffer.ParallelWriter ECB;
 
         [BurstCompile]
-        private void Execute(DataAspect dataAspect)
+        private void Execute(DataAspect dataAspect, [EntityIndexInQuery]int sortKey)
         {
             dataAspect.EnemySpawnTimer -= DeltaTime;
             if (!dataAspect.TimeToSpawnWave)
@@ -51,11 +49,13 @@ namespace Script.DOTS
 
             for (int i = 0; i < dataAspect.NumberToSpawn; i++)
             {
-                var newEnemy = ECB.Instantiate(dataAspect.EnemyPrefab);
-                ECB.SetComponent(newEnemy, dataAspect.GetRandomEnemyTransform());
+                var newEnemy = ECB.Instantiate(sortKey, dataAspect.EnemyPrefab);
+                ECB.SetComponent(sortKey, newEnemy, dataAspect.GetRandomEnemyTransform());   
             }
 
             dataAspect.EnemySpawnTimer = dataAspect.SpawnRate;
         }
     }
+    
+    
 }

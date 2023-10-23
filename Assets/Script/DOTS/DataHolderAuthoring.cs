@@ -25,8 +25,8 @@ namespace Script.DOTS
         public float spawnRadius = 15;
         
         [Header("Other")] public uint randomSeed;
+        public Transform playerTransform;
         
-
     }
 
     public class DataBaker : Baker<DataHolderAuthoring>
@@ -43,7 +43,7 @@ namespace Script.DOTS
                     BulletSpeed = authoring.bulletSpeed,
                     SpawnRate = authoring.enemySpawnRate,
                     NumberToSpawn = authoring.numberToSpawn,
-                    SpawnRadius = authoring.spawnRadius
+                    SpawnRadius = authoring.spawnRadius,
                 });
             AddComponent(dataEntity, new DataRandom()
             {   

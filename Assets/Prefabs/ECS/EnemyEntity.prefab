@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 436660872979120328}
   - component: {fileID: 6406296028572431884}
+  - component: {fileID: 7688664274283358788}
   m_Layer: 0
   m_Name: EnemyEntity
   m_TagString: Untagged
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7688664274283358788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2895170806295922094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14bd167c3b49c7642b271df7e454e43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingSpeed: 1

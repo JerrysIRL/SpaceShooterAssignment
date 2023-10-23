@@ -7,7 +7,6 @@ namespace Script.DOTS
     {
         public float movementSpeed;
         public float rotationSpeed;
-        public Transform projectileTransform;
     }
 
     public class PlayerAuthoringBaker : Baker<PlayerAuthoring>

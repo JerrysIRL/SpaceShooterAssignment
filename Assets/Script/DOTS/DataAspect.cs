@@ -13,9 +13,9 @@ namespace Script.DOTS
         private readonly RefRW<EnemySpawnTimer> _spawnTimer;
 
         public Entity EnemyPrefab => _dataProperties.ValueRO.EnemyPrefab;
-        public int EnemyDamage => _dataProperties.ValueRO.EnemyDamage;
         public int NumberToSpawn => _dataProperties.ValueRO.NumberToSpawn;
         public float SpawnRate => _dataProperties.ValueRO.SpawnRate;
+        public float EnemySpeed => _dataProperties.ValueRO.EnemySpeed;
 
         public float EnemySpawnTimer
         {
@@ -30,7 +30,7 @@ namespace Script.DOTS
             {
                 Position = GetRandomPosition(),
                 Rotation = quaternion.identity,
-                Scale = 1f
+                Scale = 0.31f
             };
         }
         
