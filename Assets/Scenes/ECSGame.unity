@@ -352,6 +352,7 @@ MonoBehaviour:
   numberToSpawn: 0
   spawnRadius: 15
   randomSeed: 0
+  playerTransform: {fileID: 0}
 --- !u!4 &1585769703
 Transform:
   m_ObjectHideFlags: 0

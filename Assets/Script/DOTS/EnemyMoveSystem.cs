@@ -17,13 +17,10 @@ namespace Script.DOTS
             state.RequireForUpdate<PlayerMovementParams>();
         }
 
-        public void OnDestroy(ref SystemState state)
-        {
-        }
-
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
+            
             var player = SystemAPI.GetSingletonEntity<PlayerMovementParams>();
             var playerTranform = SystemAPI.GetComponentRO<LocalTransform>(player).ValueRO;
             
