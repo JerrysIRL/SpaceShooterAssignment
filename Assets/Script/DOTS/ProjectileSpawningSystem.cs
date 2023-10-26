@@ -2,18 +2,18 @@ using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEngine;
 
 namespace Script.DOTS
 {
     [BurstCompile]
-    [UpdateInGroup(typeof(InitializationSystemGroup))]
-    [UpdateAfter(typeof(SpawnEnemySystem))]
+    [UpdateBefore(typeof(TransformSystemGroup))]
     public partial struct ProjectileSpawningSystem : ISystem
     {
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
-            state.RequireForUpdate<PlayerMovementParams>();
+            state.RequireForUpdate<PlayerInput>();
             state.RequireForUpdate<DataProperties>();
         }
 
@@ -21,15 +21,17 @@ namespace Script.DOTS
         public void OnUpdate(ref SystemState state)
         {
             var deltaTime = SystemAPI.Time.DeltaTime;
-            var ecbSingleton = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>();
+            var ecbSingleton = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged).AsParallelWriter();
             var player = SystemAPI.GetSingletonEntity<PlayerMovementParams>();
             var playerTransform = SystemAPI.GetComponentRO<LocalTransform>(player).ValueRO;
-            
 
+            var input = SystemAPI.GetSingleton<PlayerInput>();
+            
+            if(!input.IsShooting) {return;}
             new SpawnProjectileJob()
             {
                 DeltaTime = deltaTime,
-                ECB = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged).AsParallelWriter(),
+                ECB = ecbSingleton,
                 PlayerTransform = playerTransform
             }.ScheduleParallel();
         }

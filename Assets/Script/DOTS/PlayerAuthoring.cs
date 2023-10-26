@@ -15,7 +15,7 @@ namespace Script.DOTS
         {
             var playerEntity = GetEntity(TransformUsageFlags.Dynamic);
         
-            AddComponent<PlayerMoveInput>(playerEntity);
+            AddComponent<PlayerInput>(playerEntity);
             AddComponent(playerEntity, new PlayerMovementParams()
             {
                 MovementSpeed = authoring.movementSpeed,

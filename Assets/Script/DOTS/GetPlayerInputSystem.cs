@@ -12,7 +12,7 @@ namespace Script.DOTS
 
         protected override void OnCreate()
         {
-            RequireForUpdate<PlayerMoveInput>();
+            RequireForUpdate<PlayerInput>();
             _playerControls = new PlayerControls();
         }
 
@@ -21,7 +21,7 @@ namespace Script.DOTS
             Vector2 moveInput = _playerControls.PlayerActionMap.Movement.ReadValue<Vector2>();
             bool shootButton = _playerControls.PlayerActionMap.Shoot.IsPressed();
             
-            SystemAPI.SetSingleton(new PlayerMoveInput
+            SystemAPI.SetSingleton(new PlayerInput
             {
                 MoveVector = moveInput,
                 IsShooting = shootButton

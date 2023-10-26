@@ -129,6 +129,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 321a3d1acc897d54997fce708fcf41e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
-  rotationSpeed: 5
-  projectileTransform: {fileID: 3676762132316531474}
+  movementSpeed: 5
+  rotationSpeed: 6

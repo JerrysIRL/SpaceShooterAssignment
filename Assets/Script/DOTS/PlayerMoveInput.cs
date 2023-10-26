@@ -3,7 +3,7 @@ using Unity.Mathematics;
 
 namespace Script.DOTS
 {
-    public struct PlayerMoveInput : IComponentData
+    public struct PlayerInput : IComponentData
     {
         public float2 MoveVector;
         public bool IsShooting;

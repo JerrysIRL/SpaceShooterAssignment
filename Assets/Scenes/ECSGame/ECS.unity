@@ -123,77 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &447617859 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9201512328191964854, guid: bb98160f8d6ec334a9959f2982c4031f, type: 3}
-  m_PrefabInstance: {fileID: 1281304112}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &447617860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447617859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d30974bf68d61043b1572197db94cdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SimulationType: 1
-  m_Gravity:
-    x: -0
-    y: -9.81
-    z: -0
-  m_SolverIterationCount: 4
-  m_EnableSolverStabilizationHeuristic: 0
-  m_MultiThreaded: 1
-  m_SynchronizeCollisionWorld: 0
---- !u!61 &447617864
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447617859}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 0.8}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
-  m_EdgeRadius: 0
 --- !u!1001 &1281304112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -242,14 +171,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5768578129291411588, guid: bb98160f8d6ec334a9959f2982c4031f, type: 3}
-      propertyPath: movementSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5768578129291411588, guid: bb98160f8d6ec334a9959f2982c4031f, type: 3}
-      propertyPath: rotationSpeed
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 9201512328191964854, guid: bb98160f8d6ec334a9959f2982c4031f, type: 3}
       propertyPath: m_Name
       value: PlayerECS
@@ -258,13 +179,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 154540749783630604, guid: bb98160f8d6ec334a9959f2982c4031f, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9201512328191964854, guid: bb98160f8d6ec334a9959f2982c4031f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 447617860}
-    - targetCorrespondingSourceObject: {fileID: 9201512328191964854, guid: bb98160f8d6ec334a9959f2982c4031f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 447617864}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb98160f8d6ec334a9959f2982c4031f, type: 3}
 --- !u!1001 &4078682383329752495
 PrefabInstance:
@@ -274,6 +189,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
+      propertyPath: bulletSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: spawnRadius
       value: 15
@@ -292,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: bulletSpawnRate
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2562232586105865346, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: m_Name

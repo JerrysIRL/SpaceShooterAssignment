@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -27,9 +28,9 @@ namespace Script.DOTS
         public float DeltaTime;
         
         [BurstCompile]
-        private void Execute(ref LocalTransform transform, in PlayerMoveInput moveInput, PlayerMovementParams movementParams)
+        private void Execute(ref LocalTransform transform, in PlayerInput input, PlayerMovementParams movementParams)
         {
-            var playerMoveInput = moveInput;
+            var playerMoveInput = input;
             
             playerMoveInput.MoveVector.x = playerMoveInput.MoveVector.y > -0.99f ? -playerMoveInput.MoveVector.x : playerMoveInput.MoveVector.x;
             
