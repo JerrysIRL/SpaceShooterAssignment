@@ -6,6 +6,7 @@ namespace Script.DOTS
 {
     [BurstCompile]
     [UpdateInGroup(typeof(InitializationSystemGroup))]
+    
     public partial struct SpawnEnemySystem : ISystem
     {
         [BurstCompile]
@@ -27,8 +28,7 @@ namespace Script.DOTS
                 DeltaTime = deltaTime,
                 ECB = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged).AsParallelWriter()
             }.ScheduleParallel();
-            
-            
+           
         }
     }
 
