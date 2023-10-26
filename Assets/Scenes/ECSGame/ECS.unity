@@ -211,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: bulletSpawnRate
-      value: 0.1
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2562232586105865346, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: m_Name
