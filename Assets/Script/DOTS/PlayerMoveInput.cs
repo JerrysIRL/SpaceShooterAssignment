@@ -5,7 +5,8 @@ namespace Script.DOTS
 {
     public struct PlayerMoveInput : IComponentData
     {
-        public float2 Value;
+        public float2 MoveVector;
+        public bool IsShooting;
     }
 
     public struct PlayerMovementParams : IComponentData

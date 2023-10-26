@@ -1,4 +1,5 @@
 using Unity.Entities;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Script.DOTS
@@ -18,8 +19,13 @@ namespace Script.DOTS
         protected override void OnUpdate()
         {
             Vector2 moveInput = _playerControls.PlayerActionMap.Movement.ReadValue<Vector2>();
+            bool shootButton = _playerControls.PlayerActionMap.Shoot.IsPressed();
             
-            SystemAPI.SetSingleton(new PlayerMoveInput{ Value = moveInput});
+            SystemAPI.SetSingleton(new PlayerMoveInput
+            {
+                MoveVector = moveInput,
+                IsShooting = shootButton
+            });
         }
 
         protected override void OnStartRunning()

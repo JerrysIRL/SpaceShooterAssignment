@@ -20,7 +20,6 @@ namespace Script.DOTS
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            
             var player = SystemAPI.GetSingletonEntity<PlayerMovementParams>();
             var playerTranform = SystemAPI.GetComponentRO<LocalTransform>(player).ValueRO;
             
@@ -31,14 +30,7 @@ namespace Script.DOTS
                 DeltaTime = deltaTime,
                 PlayerTransform = playerTranform
             }.ScheduleParallel();
-
-            // foreach (var enemy in SystemAPI.Query<EnemyAspect>().WithAll<EnemyTag>())
-            // {
-            //    enemy.Move(playerTranform, dataProperties.EnemySpeed, deltaTime);
-            // }
         }
-        
-        
     }
     
     [BurstCompile]

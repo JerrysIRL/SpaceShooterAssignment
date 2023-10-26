@@ -31,10 +31,10 @@ namespace Script.DOTS
         {
             var playerMoveInput = moveInput;
             
-            playerMoveInput.Value.x = playerMoveInput.Value.y > -0.99f ? -playerMoveInput.Value.x : playerMoveInput.Value.x;
+            playerMoveInput.MoveVector.x = playerMoveInput.MoveVector.y > -0.99f ? -playerMoveInput.MoveVector.x : playerMoveInput.MoveVector.x;
             
-            transform.Position += transform.Up() * playerMoveInput.Value.y * (movementParams.MovementSpeed * DeltaTime);
-            transform.Rotation = math.mul(transform.Rotation, quaternion.RotateZ(playerMoveInput.Value.x * (movementParams.RotationSpeed * DeltaTime)));
+            transform.Position += transform.Up() * playerMoveInput.MoveVector.y * (movementParams.MovementSpeed * DeltaTime);
+            transform.Rotation = math.mul(transform.Rotation, quaternion.RotateZ(playerMoveInput.MoveVector.x * (movementParams.RotationSpeed * DeltaTime)));
             transform.Scale = 1f;
         }
     }
