@@ -12,6 +12,7 @@ namespace Script.DOTS
         public int EnemyDamage;
 
         public float BulletSpeed;
+        public float ProjectileSpawnRate;
 
         public float SpawnRate;
         public int NumberToSpawn;
@@ -20,6 +21,11 @@ namespace Script.DOTS
     }
 
     public struct EnemySpawnTimer : IComponentData
+    {
+        public float Value;
+    }
+    
+    public struct ProjectileSpawnTimer : IComponentData
     {
         public float Value;
     }

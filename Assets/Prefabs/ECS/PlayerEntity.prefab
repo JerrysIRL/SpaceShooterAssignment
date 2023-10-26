@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5189378795741006069}
   - component: {fileID: 5768578129291411588}
   m_Layer: 0
-  m_Name: PlayerECS
+  m_Name: PlayerEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

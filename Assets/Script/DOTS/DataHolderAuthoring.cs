@@ -18,6 +18,7 @@ namespace Script.DOTS
 
         [Header("Bullet Properties")] 
         public float bulletSpeed;
+        public float bulletSpawnRate;
 
         [Header("EnemySpawner")] 
         public float enemySpawnRate;
@@ -25,7 +26,6 @@ namespace Script.DOTS
         public float spawnRadius = 15;
         
         [Header("Other")] public uint randomSeed;
-        public Transform playerTransform;
         
     }
 
@@ -44,12 +44,15 @@ namespace Script.DOTS
                     SpawnRate = authoring.enemySpawnRate,
                     NumberToSpawn = authoring.numberToSpawn,
                     SpawnRadius = authoring.spawnRadius,
+                    ProjectileSpawnRate = authoring.bulletSpawnRate
                 });
             AddComponent(dataEntity, new DataRandom()
             {   
                 Value = Random.CreateFromIndex(authoring.randomSeed)
             });
             AddComponent(dataEntity, new EnemySpawnTimer());
+            AddComponent(dataEntity, new ProjectileSpawnTimer());
         }
     }
+    
 }
