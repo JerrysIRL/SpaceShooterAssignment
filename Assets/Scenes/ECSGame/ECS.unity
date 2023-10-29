@@ -190,28 +190,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
-      propertyPath: bulletSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
-      propertyPath: spawnRadius
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 8202384161809432494, guid: 0d452fb55a08bc843a0121761c65f4ce, type: 3}
-    - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
-      propertyPath: numberToSpawn
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
-      propertyPath: enemySpawnRate
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 31198892025668321, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: bulletSpawnRate
-      value: 0.02
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 2562232586105865346, guid: 618424a83e88ed240a225441801aed35, type: 3}
       propertyPath: m_Name

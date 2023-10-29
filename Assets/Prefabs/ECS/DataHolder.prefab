@@ -45,11 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2895170806295922094, guid: 23b39e1fa9f491643a200fa381780d0a, type: 3}
-  bulletPrefab: {fileID: 8202384161809432494, guid: 384a2c4854c6d884da8405b7a63374e7, type: 3}
+  bulletPrefab: {fileID: 8202384161809432494, guid: 0d452fb55a08bc843a0121761c65f4ce, type: 3}
   enemySpeed: 1
   enemyDamage: 1
-  bulletSpeed: 10
-  timeBetweenSpawns: 5
-  numberToSpawn: 10
-  spawnRadius: 10
+  bulletSpeed: 20
+  bulletSpawnRate: 0.02
+  enemySpawnRate: 0.2
+  numberToSpawn: 100
+  spawnRadius: 15
   randomSeed: 100

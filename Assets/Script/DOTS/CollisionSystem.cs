@@ -22,7 +22,7 @@ namespace Script.DOTS
             {
                 foreach (var (enemy, entity) in SystemAPI.Query<RefRO<LocalTransform>>().WithAll<EnemyTag>().WithEntityAccess())
                 {
-                    if (math.distancesq(projectile.ValueRO.Position, enemy.ValueRO.Position) < 0.1f)
+                    if (math.distancesq(projectile.ValueRO.Position, enemy.ValueRO.Position) < 0.05f)
                     {
                         SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged).DestroyEntity(entity);
                     }
