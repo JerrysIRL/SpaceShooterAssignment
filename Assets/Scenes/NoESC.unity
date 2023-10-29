@@ -396,7 +396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemieAmountText: {fileID: 1920935003}
   fpsCounterText: {fileID: 2027838630}
-  enemieCounter: 0
+  enemyCounter: 0
   updateInterval: 0.5
 --- !u!4 &1217774299
 Transform:
@@ -618,7 +618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.018000001, y: 0.147}
   m_AnchorMax: {x: 0.20917186, y: 0.192}
-  m_AnchoredPosition: {x: -119.5, y: -62.999695}
+  m_AnchoredPosition: {x: -119.49988, y: -62.999695}
   m_SizeDelta: {x: -287, y: -16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1920935003
@@ -903,6 +903,10 @@ PrefabInstance:
     - target: {fileID: 3676762132316531474, guid: d9be8e717a7eed349935e00fb8a16aa9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.631
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708091306497177378, guid: d9be8e717a7eed349935e00fb8a16aa9, type: 3}
+      propertyPath: canonFireRate
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 9201512328191964854, guid: d9be8e717a7eed349935e00fb8a16aa9, type: 3}
       propertyPath: m_Name
