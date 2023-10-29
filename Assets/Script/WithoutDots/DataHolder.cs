@@ -37,9 +37,9 @@ public class DataHolder : MonoBehaviour
 
         if (_timeSinceLastUpdate >= updateInterval)
         {
-            string fps = (1.0f / Time.deltaTime).ToString();
+            string fps = (Mathf.Round(1.0f / Time.deltaTime)).ToString();
             enemieAmountText.text = $"Enemies Alive: {enemyCounter}";
-            fpsCounterText.text = $"FPS: {fps}";
+            fpsCounterText.text = $"FPS: {(fps)}";
             
             _timeSinceLastUpdate = 0f;
         }
