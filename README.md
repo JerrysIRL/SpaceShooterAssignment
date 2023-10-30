@@ -11,7 +11,7 @@ I have firstly created the whole game without any ECS package. After giving it a
 
 ECS enabled me to have **2400%** increase in enemies with same FPS.
 
-I have tried to utilized most of the features that ECS has to offer which to squeeze out the most perfomance out of the PC. 
+I have tried to utilized most of the features that ECS has to offer which to squeeze out the most perfomance out of the CPU. 
  
 ### Efficient use of computer hardware
 
@@ -45,10 +45,16 @@ I have tried to utilized most of the features that ECS has to offer which to squ
  - **Cache Efficiency**
 
    ECS tries to store data of the same type close in the Cache memory to reduce the lookup time when doing Querys<> for example. The systems exhibits a pattern of chunks of data that were repeatedly accessed. 
- 
+
  ## Profiler debugging and Optimization
 
  When creating the game i have used the Profiler to point me in the right direction to change the code. Instatiation hundrends of objects a the same time was costly so I decided to create a pooling system to minimize the spikes of the application.
+ 
+ This is the final profiler result form the *GameObject* scene with roughly 3000 enemies. Where rendering and physics are what makes this laggy quickly and not scalable.
+  ![Unity_3obzGSAEq2](https://github.com/JerrysIRL/SpaceShooterAssignment/assets/113015090/d09d24a2-796e-409d-8b16-0223356f881c)
+
+  And this is the ECS scene with roughly 30000 entities where  rendering is roughly 45% of the player loop. **All** systems combined in this case take only 10% of the load and took only 0.83 ms which i think is an incredible improvement.
+  ![Unity_FecsFKFyHR](https://github.com/JerrysIRL/SpaceShooterAssignment/assets/113015090/babfcf2a-f5d7-4a84-a889-a701cad3ffcb)
 
 
 ## Usage
