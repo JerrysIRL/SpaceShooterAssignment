@@ -34,6 +34,7 @@ I have tried to utilized most of the features that ECS has to offer which to squ
 
  ## Data-oriented Design
 Data-oriented design is an approach which focused on organizing and processing large amounts of data as effcient as possible over the OOD that we are used to with C#. In this case where our goal is to process large amount of objects focusing on using most out of the hardware provided.
+
 Here are the main conecepts that i used:
 
  - **Components**
