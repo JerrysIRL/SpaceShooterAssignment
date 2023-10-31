@@ -5,6 +5,8 @@ using Unity.Transforms;
 
 namespace Script.DOTS
 {
+    [UpdateInGroup(typeof(InitializationSystemGroup))]
+    [UpdateBefore(typeof(EnemyMoveSystem))]
     [BurstCompile]
     public partial struct CollisionSystem : ISystem
     {
