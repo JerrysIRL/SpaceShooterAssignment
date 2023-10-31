@@ -44,17 +44,19 @@ I have tried to utilized most of the features that ECS has to offer which to squ
 
  - **Cache Efficiency**
 
-   ECS tries to store data of the same type close in the Cache memory to reduce the lookup time when doing Querys<> for example. The systems exhibits a pattern of chunks of data that were repeatedly accessed. 
+   ECS tries to store data of the same type close in the Cache memory to reduce the lookup time when doing Querys<> for example. The systems indicates a pattern of data that were repeatedly accessed, to store it at the accessable place. 
 
  ## Profiler debugging and Optimization
 
- When creating the game i have used the Profiler to point me in the right direction to change the code. Instatiation hundrends of objects a the same time was costly so I decided to create a pooling system to minimize the spikes of the application.
+ When creating the game i have used the Profiler to point me in the right direction to change the code. Instatiation hundrends of objects a the same time was costly so I decided to create a pooling system to minimize the spikes of the application. 
  
  This is the final profiler result form the *GameObject* scene with roughly 3000 enemies. Where rendering and physics are what makes this laggy quickly and not scalable.
   ![Unity_3obzGSAEq2](https://github.com/JerrysIRL/SpaceShooterAssignment/assets/113015090/d09d24a2-796e-409d-8b16-0223356f881c)
 
   And this is the ECS scene with roughly 30000 entities where  rendering is roughly 45% of the player loop. **All** systems combined in this case take only 10% of the load and took only 0.83 ms which i think is an incredible improvement.
   ![Unity_FecsFKFyHR](https://github.com/JerrysIRL/SpaceShooterAssignment/assets/113015090/babfcf2a-f5d7-4a84-a889-a701cad3ffcb)
+
+  I have also tried to document the results to keep track of if the optimizations went the right way or not. Some of the changes i have tried have not always been for the better, that is why i think it's very important to do reprofiling and confirm the changes!
 
 
 ## Usage
@@ -67,4 +69,4 @@ Use the following controls to play the game:
 
 
 ## Installation
-To install and play Endless Runner, simply download the latest release from the "Release" section on the GitHub repository page and launch the executable.
+To install and play 'Space Shooter' simply download the latest release from the "Release" section on the GitHub repository page and launch the executable.
