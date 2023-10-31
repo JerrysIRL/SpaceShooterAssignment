@@ -27,12 +27,14 @@ I have tried to utilized most of the features that ECS has to offer which to squ
 
   Entities are very barebones object types, conver§ting the objects makes a huge boost in perfomance due to eliminated overhead using GameObjects and MonoBehaviour.
 
-- **Reduced GC**
+- **Reduced Garbage-Collection**
 
   DOTS/ECS package largely reduces the cost for garbage collection. The documenatation states that is uses memory pooling system to minimize the spike caused by memory allocation.
 
 
  ## Data-oriented Design
+Data-oriented design is an approach which focused on organizing and processing large amounts of data as effcient as possible over the OOD that we are used to with C#. In this case where our goal is to process large amount of objects focusing on using most out of the hardware provided.
+Here are the main conecepts that i used:
 
  - **Components**
 
