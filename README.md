@@ -62,7 +62,7 @@ Here are the main conecepts that i used:
   And this is the ECS scene with roughly 30000 entities where  rendering is roughly 45% of the player loop. **All** systems combined in this case take only 10% of the load and took only 0.83 ms which i think is an incredible improvement.
   ![Unity_FecsFKFyHR](https://github.com/JerrysIRL/SpaceShooterAssignment/assets/113015090/babfcf2a-f5d7-4a84-a889-a701cad3ffcb)
 
-  I have also tried to document the results to keep track of if the optimizations went the right way or not. Some of the changes i have tried have not always been for the better, that is why i think it's very important to do reprofiling and confirm the changes!
+  I have also documented the results to keep track of if the optimizations went the right way or not. Some of the changes i have tried have not always been for the better, that is why i think it's very important to do reprofiling and confirm the changes!
 
 
 ## Usage
