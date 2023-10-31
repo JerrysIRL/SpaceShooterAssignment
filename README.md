@@ -13,7 +13,8 @@ ECS enabled me to have **2400%** increase in enemies with same FPS.
 
 I have tried to utilized most of the features that ECS has to offer which to squeeze out the most perfomance out of the CPU. 
 
-![SpaceShooterAssignment_IB7qYOybgs](https://github.com/JerrysIRL/SpaceShooterAssignment/assets/113015090/0ba9c431-9fdf-4e97-b8ff-d2fac7f95e59)
+![SpaceShooterAssignment_IB7qYOybgs](https://github.com/JerrysIRL/SpaceShooterAssignment/assets/113015090/ebfca94b-7afe-4894-a032-0baa7660dd06)
+
  
 ### Efficient use of computer hardware
 
