@@ -158,7 +158,7 @@ RectTransform:
   m_GameObject: {fileID: 7820231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 2.4894707, y: 2.4894707, z: 2.4894707}
+  m_LocalScale: {x: 1.4762932, y: 1.4762932, z: 1.4762932}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -304,8 +304,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
-  m_isRichText: 1
+  m_isRichText: 0
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -699,10 +699,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1949317980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.018000001, y: 0.082}
-  m_AnchorMax: {x: 0.14039062, y: 0.11730556}
-  m_AnchoredPosition: {x: -52.400146, y: -0.20007324}
-  m_SizeDelta: {x: -109, y: -1}
+  m_AnchorMin: {x: 0.018000001, y: 0.05477778}
+  m_AnchorMax: {x: 0.23200001, y: 0.106000006}
+  m_AnchoredPosition: {x: -119.49988, y: -63.49994}
+  m_SizeDelta: {x: -286, y: -18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1667390573
 MonoBehaviour:
@@ -751,13 +751,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
-  m_isRichText: 1
+  m_isRichText: 0
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -787,7 +787,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -104.39023, w: 0}
+  m_margin: {x: -23.776382, y: -70.82333, z: -262.30963, w: 54.993225}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

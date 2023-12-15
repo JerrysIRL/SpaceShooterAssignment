@@ -22,7 +22,7 @@ namespace Script.DOTS
             var dataAspect = SystemAPI.GetAspect<DataAspect>(dataEntity);
             var deltaTime = SystemAPI.Time.DeltaTime;
             var ecb = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged);
-            
+
             foreach (var (projectile, projEntity) in SystemAPI.Query<RefRW<LocalTransform>>().WithAll<ProjectileTag>().WithEntityAccess())
             {
                 var newPos = projectile.ValueRO.Position + projectile.ValueRO.Up() * dataAspect.ProjectileSpeed * deltaTime;
@@ -37,5 +37,4 @@ namespace Script.DOTS
             }
         }
     }
-    
 }

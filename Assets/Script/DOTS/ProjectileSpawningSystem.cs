@@ -2,7 +2,6 @@ using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Script.DOTS
 {
@@ -13,6 +12,8 @@ namespace Script.DOTS
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
+            state.RequireForUpdate<PlayerMovementParams>();
+            state.RequireForUpdate<BeginInitializationEntityCommandBufferSystem.Singleton>();
             state.RequireForUpdate<PlayerInput>();
             state.RequireForUpdate<DataProperties>();
         }
@@ -20,17 +21,20 @@ namespace Script.DOTS
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            var deltaTime = SystemAPI.Time.DeltaTime;
             var ecbSingleton = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>().CreateCommandBuffer(state.WorldUnmanaged).AsParallelWriter();
             var player = SystemAPI.GetSingletonEntity<PlayerMovementParams>();
             var playerTransform = SystemAPI.GetComponentRO<LocalTransform>(player).ValueRO;
 
             var input = SystemAPI.GetSingleton<PlayerInput>();
-            
-            if(!input.IsShooting) {return;}
+
+            if (!input.IsShooting)
+            {
+                return;
+            }
+
             new SpawnProjectileJob()
             {
-                DeltaTime = deltaTime,
+                DeltaTime = SystemAPI.Time.DeltaTime,
                 ECB = ecbSingleton,
                 PlayerTransform = playerTransform
             }.ScheduleParallel();
@@ -54,7 +58,7 @@ namespace Script.DOTS
 
                 var newProjectile = ECB.Instantiate(sortKey, dataAspect.ProjectilePrefab);
                 ECB.AddComponent(sortKey, newProjectile, new ProjectileTag());
-                
+
                 float3 projectileOffset = PlayerTransform.Up();
                 float3 spawnPoint = PlayerTransform.Position + projectileOffset;
                 ECB.SetComponent(sortKey, newProjectile, new LocalTransform
@@ -63,14 +67,13 @@ namespace Script.DOTS
                     Rotation = PlayerTransform.Rotation,
                     Scale = 1f
                 });
-                
+
                 dataAspect.ProjectileSpawnTimer = dataAspect.ProjectileSpawnRate;
             }
         }
-        
     }
+
     public struct ProjectileTag : IComponentData
     {
-            
     }
 }

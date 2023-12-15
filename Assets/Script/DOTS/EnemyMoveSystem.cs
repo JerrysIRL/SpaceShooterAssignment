@@ -1,7 +1,6 @@
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Script.DOTS
 {
@@ -22,9 +21,9 @@ namespace Script.DOTS
         {
             var player = SystemAPI.GetSingletonEntity<PlayerMovementParams>();
             var playerTranform = SystemAPI.GetComponentRO<LocalTransform>(player).ValueRO;
-            
+
             float deltaTime = SystemAPI.Time.DeltaTime;
-            
+
             new MoveEnemyJob()
             {
                 DeltaTime = deltaTime,
@@ -32,7 +31,7 @@ namespace Script.DOTS
             }.ScheduleParallel();
         }
     }
-    
+
     [BurstCompile]
     public partial struct MoveEnemyJob : IJobEntity
     {
@@ -43,6 +42,5 @@ namespace Script.DOTS
         {
             enemy.Move(PlayerTransform, enemy.MovementSpeed, DeltaTime);
         }
-        
     }
 }

@@ -20,7 +20,7 @@ namespace Script.DOTS
         {
             Vector2 moveInput = _playerControls.PlayerActionMap.Movement.ReadValue<Vector2>();
             bool shootButton = _playerControls.PlayerActionMap.Shoot.IsPressed();
-            
+
             SystemAPI.SetSingleton(new PlayerInput
             {
                 MoveVector = moveInput,

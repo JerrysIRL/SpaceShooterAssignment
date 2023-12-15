@@ -1,7 +1,6 @@
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEditor;
 using UnityEngine;
 
 namespace Script.DOTS
@@ -16,21 +15,18 @@ namespace Script.DOTS
         public override void Bake(EnemyAuthoring authoring)
         {
             var entity = GetEntity(TransformUsageFlags.Dynamic);
-        
+
             AddComponent(entity, new EnemyTag());
             AddComponent(entity, new EnemySpeed()
             {
                 Value = authoring.movingSpeed
             });
-            
-            
         }
     }
 
     public readonly partial struct EnemyAspect : IAspect
     {
         public readonly Entity Entity;
-        
         private readonly RefRW<LocalTransform> _transform;
         private readonly RefRO<EnemySpeed> _enemySpeed;
 
@@ -47,6 +43,8 @@ namespace Script.DOTS
     {
         public float Value;
     }
-    
-    public struct EnemyTag : IComponentData { }
+
+    public struct EnemyTag : IComponentData
+    {
+    }
 }

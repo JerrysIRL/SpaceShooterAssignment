@@ -49,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
             _timeSinceLastSpawn = 0;
         }
     }
-    
+
 
     public GameObject GetPooledEnemy()
     {

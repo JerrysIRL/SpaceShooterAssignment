@@ -26,7 +26,7 @@ public class UIUpdate : MonoBehaviour
 
     private void Update()
     {
-        float fps =  MathF.Floor(1 / Time.smoothDeltaTime);
+        float fps = MathF.Floor(1 / Time.smoothDeltaTime);
         FPSCounter.text = $"fps {fps}";
     }
 }

@@ -8,25 +8,20 @@ namespace Script.DOTS
 {
     public class DataHolderAuthoring : MonoBehaviour
     {
-        [Header("Prefabs")] 
-        public GameObject enemyPrefab;
+        [Header("Prefabs")] public GameObject enemyPrefab;
         public GameObject bulletPrefab;
 
-        [Header("Enemy properties")] 
-        public float enemySpeed;
+        [Header("Enemy properties")] public float enemySpeed;
         public int enemyDamage;
 
-        [Header("Bullet Properties")] 
-        public float bulletSpeed;
+        [Header("Bullet Properties")] public float bulletSpeed;
         public float bulletSpawnRate;
 
-        [Header("EnemySpawner")] 
-        public float enemySpawnRate;
+        [Header("EnemySpawner")] public float enemySpawnRate;
         public int numberToSpawn = 10;
         public float spawnRadius = 15;
-        
+
         [Header("Other")] public uint randomSeed;
-        
     }
 
     public class DataBaker : Baker<DataHolderAuthoring>
@@ -35,24 +30,23 @@ namespace Script.DOTS
         {
             var dataEntity = GetEntity(TransformUsageFlags.None);
             AddComponent(dataEntity, new DataProperties()
-                {
-                    EnemyPrefab = GetEntity(authoring.enemyPrefab, TransformUsageFlags.Dynamic),
-                    BulletPrefab = GetEntity(authoring.bulletPrefab, TransformUsageFlags.Dynamic),
-                    EnemySpeed = authoring.enemySpeed,
-                    EnemyDamage = authoring.enemyDamage,
-                    BulletSpeed = authoring.bulletSpeed,
-                    SpawnRate = authoring.enemySpawnRate,
-                    NumberToSpawn = authoring.numberToSpawn,
-                    SpawnRadius = authoring.spawnRadius,
-                    ProjectileSpawnRate = authoring.bulletSpawnRate
-                });
+            {
+                EnemyPrefab = GetEntity(authoring.enemyPrefab, TransformUsageFlags.Dynamic),
+                BulletPrefab = GetEntity(authoring.bulletPrefab, TransformUsageFlags.Dynamic),
+                EnemySpeed = authoring.enemySpeed,
+                EnemyDamage = authoring.enemyDamage,
+                BulletSpeed = authoring.bulletSpeed,
+                SpawnRate = authoring.enemySpawnRate,
+                NumberToSpawn = authoring.numberToSpawn,
+                SpawnRadius = authoring.spawnRadius,
+                ProjectileSpawnRate = authoring.bulletSpawnRate
+            });
             AddComponent(dataEntity, new DataRandom()
-            {   
+            {
                 Value = Random.CreateFromIndex(authoring.randomSeed)
             });
             AddComponent(dataEntity, new EnemySpawnTimer());
             AddComponent(dataEntity, new ProjectileSpawnTimer());
         }
     }
-    
 }

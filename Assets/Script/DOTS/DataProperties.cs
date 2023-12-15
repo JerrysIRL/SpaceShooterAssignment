@@ -24,7 +24,7 @@ namespace Script.DOTS
     {
         public float Value;
     }
-    
+
     public struct ProjectileSpawnTimer : IComponentData
     {
         public float Value;

@@ -14,7 +14,7 @@ namespace Script.DOTS
         public override void Bake(PlayerAuthoring authoring)
         {
             var playerEntity = GetEntity(TransformUsageFlags.Dynamic);
-        
+
             AddComponent<PlayerInput>(playerEntity);
             AddComponent(playerEntity, new PlayerMovementParams()
             {
